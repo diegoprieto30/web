@@ -11,13 +11,18 @@
 <body>
     <header id="top">
         <img src="images/logo.png" alt="" id="logo">
-        <nav>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav id="main-nav">
             <a href="#home">INICIO</a>
             <a href="#about">SOBRE MÍ</a>
             <a href="#services">SERVICIOS</a>
             <a href="#portfolio">PORTFOLIO</a>
             <a href="#contact">CONTACTO</a>
         </nav>
+
     </header>
 
     <main>
@@ -29,11 +34,12 @@
             <nav>
                 <a href="tel:+541137818288">+54 11 3781-8288</a>
             </nav>
-            <nav>
-                <a href="https://www.facebook.com/diegoprieto30/" target="_blank">Facebook</a>
-                <a href="https://www.behance.net/diegoprieto30" target="_blank">Behance</a>
-                <a href="https://www.instagram.com/diegoprieto30.ph" target="_blank">Instagram</a>
-            </nav>  
+            <nav class="redes-iconos">
+                <a href="https://www.facebook.com/diegoprieto30/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.behance.net/diegoprieto30" target="_blank"><i class="fab fa-behance"></i></a>
+                <a href="https://www.instagram.com/diegoprieto30.ph" target="_blank"><i class="fab fa-instagram"></i></a>
+            </nav>
+ 
          </div>
         
         
@@ -264,11 +270,20 @@
     <footer class="impar">
         <a href="#top"><img src="images/logo.png" alt="" id="logo"></a>
         <p>Copyright @2025 <strong>DiegoPrieto</strong> </p>
-        <nav>
-            <a href="https://www.facebook.com/diegoprieto30/" target="_blank">Facebook</a>
-            <a href="https://www.behance.net/diegoprieto30" target="_blank">Behance</a>
-            <a href="https://www.instagram.com/diegoprieto30.ph" target="_blank">Instagram</a>
-        </nav>
+        <nav class="redes-iconos">
+            <a href="https://www.facebook.com/diegoprieto30/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.behance.net/diegoprieto30" target="_blank"><i class="fab fa-behance"></i></a>
+            <a href="https://www.instagram.com/diegoprieto30.ph" target="_blank"><i class="fab fa-instagram"></i></a>
+            </nav>
     </footer>
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("main-nav");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("show");
+        });
+    </script>
+
 </body>
 </html>
