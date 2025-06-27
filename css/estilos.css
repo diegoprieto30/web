@@ -42,6 +42,23 @@ header nav a, footer nav a {
     font-weight: bold;
 }
 
+#contactos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px 0px;
+    padding: 16px 0px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #1F1F1F;
+    
+}
+#contactos a, footer a {
+    color: #E3A435;
+    font-weight: bold;
+}
+
 #contactos nav a {
     padding: 16px;
     font-weight: bold;
@@ -63,11 +80,11 @@ a {
 }
 
 a:hover {
-    color: #6F5328;
+    color: #E3A435;
 }
 
 h1 span, h2 span{
-    color: #6F5328;
+    color: #E3A435;
     font-weight: bold;
 }
 
@@ -76,21 +93,6 @@ h1 span, h2 span{
     justify-content: space-between;
 }
 
-#contactos {
-    display: flex;
-    justify-content: space-between;
-    margin: 24px 0px;
-    padding: 16px 0px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #1F1F1F;
-    
-}
-#contactos a, footer a {
-    color: #6F5328;
-    font-weight: bold;
-}
 
 #foto1 {
     border-radius: 152px 0px 152px 0px;
@@ -161,12 +163,28 @@ h1 span, h2 span{
 }
 
 #ofertas button {
-    background-color: #6F5328;
-    color: #fff;
-    width: 200px;
-    border-radius: 32px;
-    padding: 8px 48px;
+  background-color: #E3A435;
+  color: #fff;
+  border-radius: 32px;
+  padding: 12px 24px;
+  font-weight: bold;
+  border: none;
+  max-width: 100%;
+  width: fit-content;
+  display: block;
+  margin: 24px auto 16px auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
+#ofertas button:hover {
+  background-color: #fff;
+  color: #121212;
+  animation: bounce 0.4s ease;
+}
+
+
+
 
 #ofertas .valor {
     font-size: 40px;
@@ -228,7 +246,7 @@ h1 span, h2 span{
 .icon {
   font-size: 24px;
   margin-right: 15px;
-  color: #6F5328;
+  color: #E3A435;
   transition: color 0.3s ease;
 }
 
@@ -271,7 +289,7 @@ textarea {
 button {
   margin-top: 20px;
   padding: 12px;
-  background-color: #6F5328;
+  background-color: #E3A435;
   border: none;
   color: #fff;
   font-weight: bold;
@@ -318,3 +336,213 @@ footer {
     align-items: center; /* Centra verticalmente */
     padding: 0px 20px;
   }
+
+  /* estilos para responsive  */
+  @media (max-width: 768px) {
+  body, main {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  header, #contactos, footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  header nav a,
+  #contactos nav a,
+  footer nav a {
+    display: block;
+    margin: 4px 0;
+    padding: 8px 0;
+  }
+
+  #home, .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  #foto1, #foto2 {
+    max-width: 100%;
+    border-radius: 24px;
+  }
+
+  #about .textos {
+    column-count: 1;
+  }
+
+  #ofertas {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  #ofertas article {
+    width: 90%;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+  }
+
+  #services .contenedor-servicios {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .contact-form {
+    padding: 16px;
+  }
+
+  footer {
+    width: 100%;
+    padding: 16px;
+  }
+
+  footer img#logo {
+    height: 48px;
+  }
+
+  h1, h2, h3 {
+    text-align: center;
+  }
+
+  form input, form select, form textarea {
+    font-size: 16px;
+  }
+}
+
+
+/* Tablets: 769px a 1024px */
+@media (max-width: 1024px) {
+  body, main {
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  header, #contactos, footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  #home, .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #ofertas {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #ofertas article {
+    width: 45%;
+    margin-bottom: 24px;
+  }
+
+  .gallery img {
+    width: calc(50% - 10px);
+  }
+}
+
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Menú hamburguesa activo en móviles y tablets */
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 24px;
+    top: 32px;
+    z-index: 1001;
+  }
+
+  nav#main-nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+    position: absolute;
+    top: 96px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-top: 1px solid #292929;
+  }
+
+  nav#main-nav.show {
+    display: flex;
+  }
+
+  nav#main-nav a {
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #292929;
+  }
+}
+
+@media (max-width: 1199px) {
+  #contactos {
+    position: static !important;
+    background-color: transparent; /* o mantené el color si preferís */
+  }
+}
+
+.redes a {
+  color: #E3A435;
+  border: 1px solid #E3A435;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;
+  font-size: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.redes a:hover {
+  color: #fff;
+}
+
+.redes-iconos a {
+  color: #E3A435;
+  border: 1px solid #E3A435;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;
+  font-size: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.redes-iconos a:hover {
+  background-color: #E3A435;
+  color: #121212;
+  border-color: #E3A435;
+}
+
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.05); }
+  50%  { transform: scale(0.98); }
+  70%  { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
