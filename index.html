@@ -9,6 +9,7 @@
 
 </head>
 <body>
+    <!-- header -->
     <header id="top">
         <img src="images/logo.png" alt="" id="logo">
         <div class="menu-toggle" id="menu-toggle">
@@ -40,8 +41,7 @@
                 <a href="https://www.instagram.com/diegoprieto30.ph" target="_blank"><i class="fab fa-instagram"></i></a>
             </nav>
  
-         </div>
-        
+         </div>        
         
         <!-- Sección presentación -->
         <section id="home" class="par">
@@ -85,6 +85,7 @@
                 
                 <img src="images/diegoprieto_2.jpg" alt="diegoprieto foto servicios" id="foto2">
                 
+                <!-- sección de propuestas de servicios ofrecidos-->>
                 <section>
                     <ul>
                         <li>
@@ -116,11 +117,14 @@
                 </section>
             </div>            
             
+            <!-- sección de tarifas -->
             <section id="tarifas">
                 <p>
                     Estas tarifas son para quienes buscan tener el mejor recuerdo junto a su perro. Si quieres que trabajemos juntos en un proyecto, tienes una marca que necesita foto de producto/corporativa o quieres proponerme algo para lo que tengo que hacerte un presupuesto a medida, escríbeme y estaré encantado de que hablemos.
                 </p>
             </section>
+
+            <!-- seccion de ofertas -->
             <section id="ofertas">
                 <article>                	
                     <h3>TOBI</h3>
@@ -179,6 +183,8 @@
                     </ul>
                 </article>
             </section>
+
+            <!-- sección de ubicaciones -->
             <section id="ubicaciones">
                 <p>
                     * Las ubicaciones serán lugares cercanos entre sí, que se puedan visitar dentro de la hora de sesión.
@@ -191,20 +197,22 @@
 
         <!-- Sección de galeria de fotos -->
         <section id="portfolio" class="impar">
-            <h2>Portfolio <br>
+            <h2>
+                Portfolio 
+                <br>
                 <span>Algunos de mis trabajos recientes</span>
-
             </h2>
             <div class="gallery">
-                <img src="images/foto1.jpg" alt="Trabajo 1">
-                <img src="images/foto2.jpg" alt="Trabajo 2">
-                <img src="images/foto3.jpg" alt="Trabajo 3">
-                <img src="images/foto4.jpg" alt="Trabajo 4">
-                <img src="images/foto5.jpg" alt="Trabajo 5">
-                <img src="images/foto6.jpg" alt="Trabajo 6">
-                <img src="images/foto7.jpg" alt="Trabajo 7">
-                <img src="images/foto8.jpg" alt="Trabajo 8">
+                <a href="#"><img src="images/foto1.jpg" alt="Trabajo 1"></a>
+                <a href="#"><img src="images/foto2.jpg" alt="Trabajo 2"></a>
+                <a href="#"><img src="images/foto3.jpg" alt="Trabajo 3"></a>
+                <a href="#"><img src="images/foto4.jpg" alt="Trabajo 4"></a>
+                <a href="#"><img src="images/foto5.jpg" alt="Trabajo 5"></a>
+                <a href="#"><img src="images/foto6.jpg" alt="Trabajo 6"></a>
+                <a href="#"><img src="images/foto7.jpg" alt="Trabajo 7"></a>
+                <a href="#"><img src="images/foto8.jpg" alt="Trabajo 8"></a>
             </div>
+
         </section>
 
         <!-- Sección info contacto inferior y formulario contacto -->
@@ -220,6 +228,7 @@
                         o si tienes una marca y te imaginas una colaboración bonita… ¡Cuéntame! Me encantará escucharte.
                     </p>
 
+                    <!-- datos de contacto -->
                     <div class="info-block">
                         <i class="fas fa-phone icon"></i>
                         <div>
@@ -240,7 +249,8 @@
                         </div>
                     </div>
                 </div>
-
+                
+                <!-- formulario de contacto-->
                 <div class="contact-form">
                     <form action="mail.php" method="post" enctype="application/x-www-form-urlencoded">
                         <label for="nombre">Nombre y Apellido</label>
@@ -265,8 +275,9 @@
                 </div>
             </div>
         </section>
-        
     </main>
+
+    <!-- footer -->
     <footer class="impar">
         <a href="#top"><img src="images/logo.png" alt="" id="logo"></a>
         <p>Copyright @2025 <strong>DiegoPrieto</strong> </p>
@@ -276,6 +287,18 @@
             <a href="https://www.instagram.com/diegoprieto30.ph" target="_blank"><i class="fab fa-instagram"></i></a>
             </nav>
     </footer>
+
+    <!-- lightbox para galeria de imagenes -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">×</span>
+        <img id="lightbox-img" src="" alt="Vista ampliada">
+        <span id="counter" class="lightbox-counter"></span>
+        <p id="instruccion" class="lightbox-instruccion">Deslizar o usar flechas para navegar</p>
+        <span class="nav prev">‹</span>
+        <span class="nav next">›</span>
+    </div>
+
+    <!-- menu hamburguesa -->
     <script>
         const toggle = document.getElementById("menu-toggle");
         const nav = document.getElementById("main-nav");
@@ -284,6 +307,76 @@
             nav.classList.toggle("show");
         });
     </script>
+
+    <!-- lightbox para galeria de fotos -->
+    <script>
+        const galleryImages = document.querySelectorAll('.gallery img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.lightbox .close');
+        const nextBtn = document.querySelector('.lightbox .next');
+        const prevBtn = document.querySelector('.lightbox .prev');
+
+        let currentIndex = 0;
+
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+            currentIndex = index;
+            showImage();
+            });
+        });
+
+        function showImage() {
+            lightboxImg.classList.remove('fade');
+            void lightboxImg.offsetWidth; // 🔄 Re-trigger
+            lightboxImg.classList.add('fade');
+
+            lightboxImg.src = galleryImages[currentIndex].src;
+            counter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
+            lightbox.classList.add('show');
+        }
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('show');
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % galleryImages.length;
+            showImage();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            showImage();
+        });
+
+        // Cerrar al hacer clic fuera de la imagen
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+            lightbox.classList.remove('show');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('show')) return;
+
+        if (e.key === 'ArrowRight') {
+            currentIndex = (currentIndex + 1) % galleryImages.length;
+            showImage();
+        }
+
+        if (e.key === 'ArrowLeft') {
+            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            showImage();
+        }
+
+        if (e.key === 'Escape') {
+            lightbox.classList.remove('show');
+        }
+        });
+
+    </script>
+
 
 </body>
 </html>
