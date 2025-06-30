@@ -203,14 +203,14 @@
                 <span>Algunos de mis trabajos recientes</span>
             </h2>
             <div class="gallery">
-                <a href="#"><img src="images/foto1.jpg" alt="Trabajo 1"></a>
-                <a href="#"><img src="images/foto2.jpg" alt="Trabajo 2"></a>
-                <a href="#"><img src="images/foto3.jpg" alt="Trabajo 3"></a>
-                <a href="#"><img src="images/foto4.jpg" alt="Trabajo 4"></a>
-                <a href="#"><img src="images/foto5.jpg" alt="Trabajo 5"></a>
-                <a href="#"><img src="images/foto6.jpg" alt="Trabajo 6"></a>
-                <a href="#"><img src="images/foto7.jpg" alt="Trabajo 7"></a>
-                <a href="#"><img src="images/foto8.jpg" alt="Trabajo 8"></a>
+                <div><img src="images/foto2.jpg" alt="Trabajo 2"></div>
+                <div><img src="images/foto3.jpg" alt="Trabajo 3"></div>
+                <div><img src="images/foto4.jpg" alt="Trabajo 4"></div>
+                <div><img src="images/foto1.jpg" alt="Trabajo 1"></div>
+                <div><img src="images/foto5.jpg" alt="Trabajo 5"></div>
+                <div><img src="images/foto6.jpg" alt="Trabajo 6"></div>
+                <div><img src="images/foto7.jpg" alt="Trabajo 7"></div>
+                <div><img src="images/foto8.jpg" alt="Trabajo 8"></div>
             </div>
 
         </section>
@@ -310,7 +310,8 @@
 
     <!-- lightbox para galeria de fotos -->
     <script>
-        const galleryImages = document.querySelectorAll('.gallery img');
+        const galleryContainers = document.querySelectorAll('.gallery div');
+        const galleryImages = document.querySelectorAll('.gallery div img');
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const closeBtn = document.querySelector('.lightbox .close');
@@ -319,25 +320,40 @@
 
         let currentIndex = 0;
 
-        galleryImages.forEach((img, index) => {
-            img.addEventListener('click', () => {
-            currentIndex = index;
-            showImage();
+        galleryContainers.forEach((div, index) => {
+            div.addEventListener('click', () => {
+                currentIndex = index;
+                showImage();
             });
         });
 
         function showImage() {
+            // Paso 1: iniciar salida
             lightboxImg.classList.remove('fade');
-            void lightboxImg.offsetWidth; // 🔄 Re-trigger
-            lightboxImg.classList.add('fade');
+            lightboxImg.classList.add('fade-out');
 
-            lightboxImg.src = galleryImages[currentIndex].src;
-            counter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
+            // Paso 2: esperar a que termine la transición de salida
+            setTimeout(() => {
+                // Paso 3: cambiar la imagen
+                lightboxImg.src = galleryImages[currentIndex].src;
+                counter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
+
+                // Paso 4: esperar a que cargue la nueva imagen y hacer fade-in
+                lightboxImg.onload = () => {
+                lightboxImg.classList.remove('fade-out');
+                lightboxImg.classList.add('fade');
+                };
+            }, 200);
+
+            // Mostrar el contenedor del lightbox (por si aún no está activo)
             lightbox.classList.add('show');
+            document.body.classList.add('noscroll');
         }
 
+
+
         closeBtn.addEventListener('click', () => {
-            lightbox.classList.remove('show');
+            closeLightbox();
         });
 
         nextBtn.addEventListener('click', () => {
@@ -353,7 +369,7 @@
         // Cerrar al hacer clic fuera de la imagen
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
-            lightbox.classList.remove('show');
+            closeLightbox();
             }
         });
 
@@ -371,9 +387,19 @@
         }
 
         if (e.key === 'Escape') {
-            lightbox.classList.remove('show');
+            closeLightbox();
         }
         });
+
+        function closeLightbox() {
+            lightbox.classList.add('closing');
+
+            setTimeout(() => {
+                lightbox.classList.remove('show', 'closing');
+                document.body.classList.remove('noscroll');
+            }, 300); // Igual al tiempo de la animación
+        }
+
 
     </script>
 
