@@ -212,6 +212,11 @@ h1 span, h2 span{
     min-width: 300px;
 }
 
+#services ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 /* sección tarifas */
 #tarifas p, #ubicaciones p {
     width: 80%;
@@ -556,6 +561,11 @@ footer {
 
 	#services .contenedor-servicios ul {
 		list-style-type: none;
+	}
+
+	#services ul {
+		list-style-type: none;
+		padding: 0;
 	}
 
 	.contact-form {
