@@ -294,23 +294,33 @@ h1 span, h2 span{
 }
 
 /* sección de portfolio */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
 .gallery div {
-	display: block;
-	overflow: hidden;
-	border-radius: 10px;
-	transition: transform 0.3s ease;
+  width: calc(25% - 20px);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .gallery div:hover {
-	transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .gallery div img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
+
 
 body.noscroll {
   	overflow: hidden;
