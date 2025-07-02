@@ -483,13 +483,14 @@ button:hover {
 /* footer */
 footer {
     height: 100px;
-    max-width: 1200px;
+    max-width: 1120px;
   	width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
     align-items: center; /* Centra verticalmente */
     padding: 0px 20px;
+  	overflow: hidden;
   }
 
   /* estilos para responsive  */
