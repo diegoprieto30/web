@@ -322,6 +322,10 @@
         <span class="nav next">›</span>
     </div>
 
+    <a href="#top" id="scrollTopBtn" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
     <!-- menu hamburguesa -->
     <script>
         const toggle = document.getElementById("menu-toggle");
@@ -452,6 +456,18 @@
         });
     </script>
 
+    <!-- script del boton subir -->
+    <script>
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+            scrollTopBtn.classList.add("visible");
+            } else {
+            scrollTopBtn.classList.remove("visible");
+            }
+        });
+    </script>
 
 </body>
 </html>
