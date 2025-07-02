@@ -1,5 +1,6 @@
 /* fuente importada de Google Fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Monserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 
 /* para que el padding de todo el sitio no se sume a la medida del contenedor */
 * {
@@ -15,7 +16,7 @@ html {
 body {
     background-color: #121212;
     color: #fff;
-    font-family: "Monserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
     margin: auto;
 	max-width: 1200px;
   	width: 100%;
@@ -308,6 +309,7 @@ h1 span, h2 span{
   border-radius: 10px;
   transition: transform 0.3s ease;
   cursor: pointer;
+  animation: fadeIn 0.8s ease-in both;
 }
 
 .gallery div:hover {
@@ -728,7 +730,7 @@ footer {
 
 .lightbox img {
   opacity: 1;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
 }
 
 .lightbox img.fade-out {
