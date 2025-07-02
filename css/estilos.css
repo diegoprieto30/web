@@ -17,7 +17,12 @@ body {
     color: #fff;
     font-family: "Monserrat", sans-serif;
     margin: auto;
-    width: 1200px;
+	max-width: 1200px;
+  	width: 100%;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 /* Estilo general del header */
@@ -128,6 +133,12 @@ main {
 .par {
     background-color: #242424;
 }
+
+.par, .impar {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 
 a {
     color: #fff;
@@ -396,12 +407,6 @@ body.noscroll {
 	display: none;
 }
 
-@media (max-width: 768px) {
-	.lightbox-instruccion {
-		display: block;
-  	}
-}
-
 .fade {
   	animation: fadeIn 0.5s ease;
 }
@@ -588,6 +593,11 @@ footer {
 	form input, form select, form textarea {
 		font-size: 16px;
 	}
+
+	.lightbox-instruccion {
+		display: block;
+  	}
+
 }
 
 
