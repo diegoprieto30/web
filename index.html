@@ -274,9 +274,9 @@
                 <div class="contact-form">
                     <form action="https://formspree.io/f/mldnzaoy" method="post" enctype="application/x-www-form-urlencoded">
                         <label for="nombre">Nombre y Apellido</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu Nombre y Apellido" required>
+                        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu Nombre y Apellido" aria-label="Tu nombre" required>
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Escribe tu dirección de e-mail" required>
+                        <input type="email" id="email" name="email" placeholder="Escribe tu dirección de e-mail" aria-label="Tu correo electrónico" required>
 
                         <label for="opcion">Selecciona la opción que te interesó</label>
                         <select id="opcion" name="opcion" required>
@@ -288,9 +288,9 @@
                         </select>
 
                         <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" placeholder="Escribe tu consulta aquí y te responderé lo más rápido que me sea posible." name="mensaje" rows="6" required minlength="30"></textarea>
+                        <textarea id="mensaje" placeholder="Escribe tu consulta aquí y te responderé lo más rápido que me sea posible." aria-label="Escribí tu mensaje"  name="mensaje" rows="6" required minlength="30"></textarea>
 
-                        <button type="submit">Enviar</button>
+                        <button type="submit" aria-label="Enviar mensaje">Enviar</button>
                     </form>
                     <p id="form-msg" style="display: none; color: #E3A435; margin-top: 12px;">Gracias por tu mensaje 🎉</p>
                 </div>
