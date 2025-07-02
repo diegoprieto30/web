@@ -582,9 +582,11 @@ footer {
 	}
 
 	#ofertas {
-		flex-direction: column;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 		gap: 24px;
-		align-items: center;
+		padding: 40px 20px;
 	}
 
 	#ofertas article {
@@ -739,13 +741,6 @@ footer {
 		width: 100%;
 		text-align: center;
 		border-bottom: 1px solid #292929;
-	}
-}
-
-@media (max-width: 1199px) {
-	#contactos {
-		position: static !important;
-		background-color: transparent; /* o mantené el color si preferís */
 	}
 }
 
