@@ -59,6 +59,7 @@ main {
     width: 1120px;
     min-height: 560px;
     margin: auto;
+	overflow: visible !important;
 }
 
 /* contactos superior*/
@@ -73,6 +74,7 @@ main {
     align-items: center;
     margin: 24px 0px;
     transition: background-color 0.3s ease, color 0.3s ease;
+	box-sizing: border-box;
 }
 	#contactos a, footer a {
 		color: #E3A435;
