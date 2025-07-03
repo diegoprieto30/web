@@ -450,29 +450,20 @@
         });
     </script>
 
-    <!-- script del boton subir -->
+    <!-- script para cambiar color de fondo de la barra de contactos superior y para el boton subir -->
+
     <script>
         const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 50) {
-            scrollTopBtn.classList.add("visible");
-            } else {
-            scrollTopBtn.classList.remove("visible");
-            }
-        });
-    </script>
-
-    <!-- script para cambiar color de fondo de la barra de contactos superior -->
-    <script>
         const contactoTop = document.getElementById("contactos");
 
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 20) {
-            contactoTop.classList.add("scrolled");
-            } else {
-            contactoTop.classList.remove("scrolled");
-            }
+            const scrolled = window.scrollY > 50;
+
+            // Mostrar u ocultar el botón "volver arriba"
+            scrollTopBtn.classList.toggle("visible", scrolled);
+
+            // Activar clase sticky visual en #contactos
+            contactoTop.classList.toggle("scrolled", scrolled);
         });
     </script>
 
