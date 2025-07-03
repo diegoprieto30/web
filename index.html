@@ -356,30 +356,24 @@
         });
 
         function showImage() {
-            // Paso 1: iniciar salida
             lightboxImg.classList.remove('fade');
             lightboxImg.classList.add('fade-out');
+            lightboxImg.src = ""; // Oculta imagen anterior mientras cambia
 
-            // Paso 2: esperar a que termine la transición de salida
             setTimeout(() => {
-                // Paso 3: cambiar la imagen
                 lightboxImg.src = galleryImages[currentIndex].src;
                 counter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
-
-                // Paso 4: esperar a que cargue la nueva imagen y hacer fade-in
                 lightboxImg.onload = () => {
                 lightboxImg.classList.remove('fade-out');
                 lightboxImg.classList.add('fade');
                 };
             }, 200);
 
-            // Mostrar el contenedor del lightbox (por si aún no está activo)
             lightbox.classList.add('show');
             document.body.classList.add('noscroll');
         }
 
-
-
+        
         closeBtn.addEventListener('click', () => {
             closeLightbox();
         });
