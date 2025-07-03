@@ -463,5 +463,18 @@
         });
     </script>
 
+    <!-- script para cambiar color de fondo de la barra de contactos superior -->
+    <script>
+        const contactoTop = document.getElementById("contactos");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 20) {
+            contactoTop.classList.add("scrolled");
+            } else {
+            contactoTop.classList.remove("scrolled");
+            }
+        });
+    </script>
+
 </body>
 </html>
