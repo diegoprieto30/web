@@ -22,9 +22,7 @@ body {
   	width: 100%;
 }
 
-html, body {
-  overflow-x: hidden;
-}
+
 
 body.noscroll {
   	overflow-y: hidden;
@@ -820,3 +818,13 @@ footer {
 	}
 }
 
+@media (max-width: 1200px) {
+  #contactos {
+    position: sticky; /* volver a declarar */
+    top: 0;
+    z-index: 1000;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+}
