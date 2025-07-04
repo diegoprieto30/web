@@ -93,9 +93,13 @@ main {
 	}
 
 	#contactos.scrolled a {
-		color: #121212;
+		color: #fff;
 	}
 
+	#contactos.scrolled .redes-iconos a {
+		border: 2px solid #fff;
+	}
+	
 /* redes sociales superior e inferior */
 .redes-iconos {
 	display: flex;
