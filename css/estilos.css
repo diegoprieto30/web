@@ -564,9 +564,11 @@ footer {
 	#ofertas article {
     	max-width: 90%;
   	}
+	
 	#contactos {
-		padding: 8px 16px;
+		padding: 4px 10px;
 		gap: 6px;
+		line-height: 1.1;    	
 	}
 
 	#contactos nav {
@@ -579,15 +581,15 @@ footer {
 	}
 
 	.redes-iconos a {
-		display: inline-flex;
+		display: inline-flex !important;
 		align-items: center;
 		justify-content: center;
-		width: 38px;
-		height: 38px;
+		width: 38px !important;
+		height: 38px !important;
 		border: 2px solid #fff;
-		border-radius: 8px;
+		border-radius: 50%;
 		font-size: 18px;
-		padding: 0;
+		padding: 0 !important;
 		box-sizing: border-box;
 	}
 }
