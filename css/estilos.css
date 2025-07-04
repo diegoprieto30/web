@@ -552,6 +552,13 @@ footer {
 	transform: translateY(0);
 }
 
+.menu-toggle {
+	display: none;
+	font-size: 28px;
+	color: #fff;
+	cursor: pointer;
+}
+
 /* Ajustes para móviles */
 @media (max-width: 600px) {
   	#scrollTopBtn {
@@ -734,6 +741,15 @@ footer {
 		margin-top: 8px;
 	}
 
+	.menu-toggle {
+		display: block;
+		position: absolute;
+		right: 20px;
+		top: 30px;
+		cursor: pointer;
+		z-index: 999;
+	}
+
 }
 
 /* Tablets: 769px a 1024px */
@@ -810,13 +826,6 @@ footer {
 	}
 }
 
-
-.menu-toggle {
-	display: none;
-	font-size: 28px;
-	color: #fff;
-	cursor: pointer;
-}
 
 /* Menú hamburguesa activo en móviles y tablets */
 
