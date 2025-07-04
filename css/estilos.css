@@ -577,7 +577,14 @@ footer {
 
 	#contactos a {
 		font-size: 0.9rem;
-		line-height: 1.2;
+		line-height: 1.1 !important;
+  		margin: 0 !important;
+  		padding: 2px 0 !important;
+	}
+
+	#contactos nav {
+		margin: 0 !important;
+		padding: 0 !important;
 	}
 
 	.redes-iconos a {
@@ -586,7 +593,6 @@ footer {
 		justify-content: center;
 		width: 38px !important;
 		height: 38px !important;
-		border: 2px solid #fff;
 		border-radius: 50%;
 		font-size: 18px;
 		padding: 0 !important;
