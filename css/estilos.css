@@ -113,13 +113,15 @@ main {
 		border: 2px solid #E3A435;
 		width: 40px;
 		height: 40px;
-		border-radius: 50%;
-		display: flex;
+		border-radius:  50%;
+		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		margin: 0 8px;
 		font-size: 18px;
 		transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+		padding: 0;
+  		box-sizing: border-box;
 	}
 
 
@@ -564,6 +566,19 @@ footer {
 	#ofertas article {
     	max-width: 90%;
   	}
+	#contactos {
+		padding: 8px 16px;
+		gap: 6px;
+	}
+
+	#contactos nav {
+		gap: 8px;
+	}
+
+	#contactos a {
+		font-size: 0.9rem;
+		line-height: 1.2;
+	}
 }
 
 /* Ocultarlo en pantallas muy pequeñas (opcional) */
