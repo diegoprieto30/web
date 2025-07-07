@@ -223,8 +223,30 @@ h1 span, h2 span{
 }
 
 #services ul {
-  list-style: none;
-  padding-left: 0;
+	list-style: none;
+	padding-left: 0;
+}
+
+#sesiones h3 {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-size: 1.2rem;
+	color: #fff;
+}
+
+#sesiones h3 i {
+	color: #E3A435;
+	border: 2px solid #E3A435;
+	padding: 8px;
+	border-radius: 8px;
+	font-size: 18px;
+	width: 38px;
+	height: 38px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
 }
 
 /* sección tarifas */
