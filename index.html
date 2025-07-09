@@ -30,6 +30,8 @@
     <!-- favicon -->
     <link rel="icon" href="images/favicon-diegoprieto.png" type="image/png">
 
+    <script src="js/main.js" defer></script>
+
 </head>
 <body>
     <!-- header -->
@@ -108,8 +110,8 @@
         <section id="services" class="par">
             <div>
                 <h2> 
-                    Servicios que te ofrezco <br>
-                    <span>¿Qué tipo de sesiones fotográficas ofrezco?</span>
+                    Servicios <br>
+                    <span>¿Qué tipo de sesiones fotográficas te ofrezco?</span>
                 </h2>
             </div>
             
@@ -305,7 +307,7 @@
 
                         <button type="submit" aria-label="Enviar mensaje">Enviar</button>
                     </form>
-                    <p id="form-msg" style="display: none; color: #E3A435; margin-top: 12px;">Gracias por tu mensaje 🎉</p>
+                    <p id="form-msg" style="display: none; color: #E3A435; margin-top: 12px;">Gracias por tu mensaje <i class="fas fa-check-circle"></i></p>
                 </div>
             </div>
         </section>
@@ -335,147 +337,6 @@
     <a href="#top" id="scrollTopBtn" aria-label="Volver arriba">
         <i class="fas fa-chevron-up"></i>
     </a>
-
-    <!-- menu hamburguesa -->
-    <script>
-        const toggle = document.getElementById("menu-toggle");
-        const nav = document.getElementById("main-nav");
-
-        toggle.addEventListener("click", () => {
-            nav.classList.toggle("show");
-        });
-    </script>
-
-    <!-- lightbox para galeria de fotos -->
-    <script>
-        const galleryContainers = document.querySelectorAll('.gallery div');
-        const galleryImages = document.querySelectorAll('.gallery div img');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.querySelector('.lightbox .close');
-        const nextBtn = document.querySelector('.lightbox .next');
-        const prevBtn = document.querySelector('.lightbox .prev');
-
-        let currentIndex = 0;
-
-        galleryContainers.forEach((div, index) => {
-            div.addEventListener('click', () => {
-                currentIndex = index;
-                showImage();
-            });
-        });
-
-        function showImage() {
-            lightboxImg.classList.remove('fade');
-            lightboxImg.classList.add('fade-out');
-            lightboxImg.src = ""; // Oculta imagen anterior mientras cambia
-
-            setTimeout(() => {
-                lightboxImg.src = galleryImages[currentIndex].src;
-                counter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
-                lightboxImg.onload = () => {
-                lightboxImg.classList.remove('fade-out');
-                lightboxImg.classList.add('fade');
-                };
-            }, 200);
-
-            lightbox.classList.add('show');
-            document.body.classList.add('noscroll');
-        }
-
-
-        closeBtn.addEventListener('click', () => {
-            closeLightbox();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % galleryImages.length;
-            showImage();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-            showImage();
-        });
-
-        // Cerrar al hacer clic fuera de la imagen
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-            closeLightbox();
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('show')) return;
-
-        if (e.key === 'ArrowRight') {
-            currentIndex = (currentIndex + 1) % galleryImages.length;
-            showImage();
-        }
-
-        if (e.key === 'ArrowLeft') {
-            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-            showImage();
-        }
-
-        if (e.key === 'Escape') {
-            closeLightbox();
-        }
-        });
-
-        function closeLightbox() {
-            lightbox.classList.add('closing');
-
-            setTimeout(() => {
-                lightbox.classList.remove('show', 'closing');
-                document.body.classList.remove('noscroll');
-            }, 300); // Igual al tiempo de la animación
-        }
-
-
-    </script>
-
-    <!-- script para envío de formulario temporal -->
-    <script>
-        const form = document.querySelector('form');
-        const msg = document.getElementById('form-msg');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const data = new FormData(form);
-
-            fetch(form.action, {
-            method: form.method,
-            body: data,
-            headers: { 'Accept': 'application/json' }
-            }).then(response => {
-            if (response.ok) {
-                msg.style.display = 'block';
-                form.reset();
-            } else {
-                msg.textContent = 'Hubo un error. Intentalo nuevamente.';
-                msg.style.display = 'block';
-            }
-            });
-        });
-    </script>
-
-    <!-- script para cambiar color de fondo de la barra de contactos superior y para el boton subir -->
-
-    <script>
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
-        const contactoTop = document.getElementById("contactos");
-
-        window.addEventListener("scroll", () => {
-            const scrolled = window.scrollY > 50;
-
-            // Mostrar u ocultar el botón "volver arriba"
-            scrollTopBtn.classList.toggle("visible", scrolled);
-
-            // Activar clase sticky visual en #contactos
-            contactoTop.classList.toggle("scrolled", scrolled);
-        });
-    </script>
 
 </body>
 </html>
