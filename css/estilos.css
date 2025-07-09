@@ -489,40 +489,45 @@ h1 span, h2 span{
 	border-radius: 10px;
 }
 
-form {
-	display: flex;
-	flex-direction: column;
-}
+	form {
+		display: flex;
+		flex-direction: column;
+	}
 
-label {
-	margin-top: 15px;
-	margin-bottom: 5px;
-  	color: #ddd;
-}
+	label {
+		margin-top: 15px;
+		margin-bottom: 5px;
+		color: #ddd;
+	}
 
-input, select, textarea {
-	background-color: #1e1e1e;
-	border: 1px solid #444;
-	padding: 10px;
-	border-radius: 5px;
-	color: #fff;
-}
+	input, select, textarea {
+		background-color: #1e1e1e;
+		border: 1px solid #444;
+		padding: 10px;
+		border-radius: 5px;
+		color: #fff;
+	}
 
-button {
-	margin-top: 20px;
-	padding: 12px;
-	background-color: #E3A435;
-	border: none;
-	color: #fff;
-	font-weight: bold;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
+	button {
+		margin-top: 20px;
+		padding: 12px;
+		background-color: #E3A435;
+		border: none;
+		color: #fff;
+		font-weight: bold;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
 
-button:hover {
-  	background-color: hsl(36, 47%, 40%);
-}
+	button:hover {
+		background-color: hsl(36, 47%, 40%);
+	}
+
+	#form-msg i {
+		color: #E3A435;
+		margin-right: 8px;
+	}
 
 /* footer */
 footer {
