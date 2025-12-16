@@ -120,6 +120,7 @@ main {
 		margin: 0 8px;
 		font-size: 18px;
 		transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+		position: relative;
 	}
 
 
@@ -127,6 +128,32 @@ main {
 		background-color: #E3A435;
 		color: #121212;
 		border-color: #E3A435;
+	}
+
+	
+	/* Tooltip */
+	.redes-iconos a::after {
+		content: attr(data-tooltip);
+		position: absolute;
+		top: 100%;                  /* justo debajo del ícono */
+		left: 50%;
+		transform: translateX(-50%) translateY(8px);
+		background-color: #121212;
+		color: #fff;
+		padding: 6px 10px;
+		font-size: 12px;
+		border-radius: 6px;
+		white-space: nowrap;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.2s ease, transform 0.2s ease;
+		z-index: 999;
+	}
+
+	/* Mostrar en hover */
+	.redes-iconos a:hover::after {
+		opacity: 1;
+		transform: translateX(-50%) translateY(12px);
 	}
 
 /* background de cada sección */
